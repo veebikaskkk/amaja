@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://amaja.ee/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://amaja.ee/pildid/eramu-tume-puitfassaad-hero-01.webp</image:loc>
+      <image:title>Üksikelamu tumeda puitfassaadiga</image:title>
+      <image:caption>Tumeda puitfassaadi ja valtsplekk-katusega üksikelamu metsaserval, valmis töö.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://amaja.ee/teenused.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://amaja.ee/tood.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://amaja.ee/pildid/eramu-tume-puitfassaad-01.webp</image:loc>
+      <image:title>Üksikelamu tumeda puitfassaadiga</image:title>
+      <image:caption>Tumeda puitfassaadiga üksikelamu kõrge viilkatusega, valmis töö.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amaja.ee/pildid/eramu-puitfassaad-metsas-02.webp</image:loc>
+      <image:title>Elamu metsa serval</image:title>
+      <image:caption>Halliks patineerunud puitlaudisega elamu männimetsa serval, otsaseinas heledast tellisest maht.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amaja.ee/pildid/korterelamu-visualiseering-03.webp</image:loc>
+      <image:title>Korterelamu tänavavaade</image:title>
+      <image:caption>Tumeroheliseks värvitud puidust korterelamu tänavavaate visualiseering.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://amaja.ee/tagasiside.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amaja.ee/kontakt.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amaja.ee/privaatsus.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>
