@@ -41,7 +41,9 @@
 
   /* ---------- Valgusti ---------- */
   var lingid = Array.prototype.slice.call(
-    document.querySelectorAll(".galerii-joonised a[href]")
+    document.querySelectorAll(
+      ".galerii-joonised a[href], .galerii figure > a[href], .galerii .slaidid a[href]"
+    )
   );
 
   if (lingid.length) {
@@ -53,6 +55,12 @@
       if (fig) {
         var cap = fig.querySelector("figcaption");
         if (cap) kirjeldus = cap.textContent.replace(pealkiri, "").trim();
+      }
+      if (a.classList.contains("slaid")) {
+        var slaidid = Array.prototype.slice.call(
+          a.parentNode.querySelectorAll("a.slaid")
+        );
+        pealkiri += ", vaade " + (slaidid.indexOf(a) + 1);
       }
       var img = a.querySelector("img");
       return {

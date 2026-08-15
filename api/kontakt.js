@@ -44,7 +44,8 @@ export default async function handler(req, res) {
   const ettevote = puhasta(k.ettevote, 160);
   const telefon = puhasta(k.telefon, 60);
   const olemasolev = puhasta(k.olemasolev, 200);
-  const liik = k.liik === "uuendus" ? "Olemasoleva uuendus" : "Uus hoone";
+  const liigid = { uus: "Uus hoone", uuendus: "Olemasoleva uuendus", muu: "Muu" };
+  const liik = liigid[k.liik] || "Uus hoone";
 
   if (!nimi || !epost || !sonum) {
     return res.status(400).json({ ok: false });

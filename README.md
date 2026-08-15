@@ -30,6 +30,12 @@ Kõik pildid on lehel olemas. Kohatäiteid ei ole enam üheski kohas.
 **Fotod ja visualiseeringud, 7 tükki** tööde galeriis. Üks neist,
 "Eramu juurdeehitus", on kaks vahelduvat vaadet ühel plaadil.
 
+Tööde galerii ei kärbi pilte. Iga foto on oma loomulikus kuvasuhtes ja
+laotud veergudesse nii, et kõrgused täidavad ruumi ilma vahedeta.
+Klõps avab foto valgustis samal lehel, sama nagu joonised. Ainus koht,
+kus kärbitakse, on avalehe kolmene eelvaade, sest seal on ühesuurused
+plaadid loetavamad ja terve pilt on ühe klõpsu kaugusel tööde lehel.
+
 **Joonised, 12 tükki.** Kõik ühesuurused plaadid, joonis mahutatakse
 plaadi sisse tervikuna. Klõps avab joonise valgustis samal lehel.
 

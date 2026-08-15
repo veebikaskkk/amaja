@@ -182,23 +182,36 @@ p{margin:0 0 1.1em}
 .galerii-eelvaade img{width:100%;border-radius:2px;aspect-ratio:4/3;object-fit:cover}
 .galerii-eelvaade figcaption{font-family:"Plex Mono",monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tekst-tume);padding-top:.7rem}
 
-.galerii{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;margin-top:2.6rem}
-@media (min-width:700px){.galerii{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (min-width:1100px){.galerii{grid-template-columns:repeat(3,minmax(0,1fr))}}
-.galerii figure{margin:0}
-.galerii img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px}
+.galerii{columns:1;column-gap:24px;margin-top:2.6rem}
+@media (min-width:700px){.galerii{columns:2}}
+@media (min-width:1100px){.galerii{columns:3}}
+.galerii figure{margin:0 0 24px;break-inside:avoid;page-break-inside:avoid}
+.galerii > figure > a,.galerii .slaidid{position:relative;display:block;border-radius:2px;overflow:hidden}
+.galerii > figure > a::after,.galerii .slaidid::after{
+  content:"Vaata suurelt";
+  position:absolute;right:10px;bottom:10px;z-index:3;
+  font-family:"Plex Mono",monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;
+  background:rgba(26,19,16,.9);color:var(--aktsent);
+  border:1px solid var(--joon-tugev);
+  padding:4px 8px;border-radius:2px;
+  opacity:0;transition:opacity .18s ease;
+  pointer-events:none;
+}
+.galerii > figure > a:hover::after,.galerii > figure > a:focus-visible::after,
+.galerii .slaidid:hover::after{opacity:1}
+.galerii img{width:100%;height:auto;display:block;border-radius:2px}
 .galerii figcaption{padding-top:.8rem;font-size:.93rem;color:var(--tekst-tume)}
 .galerii figcaption strong{display:block;color:var(--tekst);font-weight:500;font-size:1rem;margin-bottom:.15rem}
 
 /* Slaidid galeriis */
-.slaidid{position:relative;width:100%;aspect-ratio:4/3;border-radius:2px;overflow:hidden;background:var(--susi)}
-.slaidid img.slaid{
-  position:absolute;inset:0;
-  width:100%;height:100%;object-fit:cover;
+.slaidid{width:100%;aspect-ratio:4/3;background:var(--susi)}
+.slaidid a.slaid{
+  position:absolute;inset:0;display:block;
   opacity:0;
   animation:slaidivahetus 9s infinite;
 }
-.slaidid img.slaid:nth-of-type(2){animation-delay:4.5s}
+.slaidid a.slaid img{width:100%;height:100%;object-fit:cover;border-radius:0}
+.slaidid a.slaid:nth-of-type(2){animation-delay:4.5s}
 @keyframes slaidivahetus{
   0%{opacity:0}
   6%{opacity:1}
@@ -213,8 +226,8 @@ p{margin:0 0 1.1em}
   border:1px solid var(--joon-tugev);border-radius:2px;padding:5px 9px;
 }
 @media (prefers-reduced-motion:reduce){
-  .slaidid img.slaid{animation:none;opacity:0}
-  .slaidid img.slaid.slaid-aktiivne{opacity:1}
+  .slaidid a.slaid{animation:none;opacity:0}
+  .slaidid a.slaid.slaid-aktiivne{opacity:1}
 }
 
 /* Joonised */
