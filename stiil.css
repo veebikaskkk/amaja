@@ -128,8 +128,8 @@ p{margin:0 0 1.1em}
   object-fit:cover;
   object-position:center 58%;
   z-index:-2;
-  filter:blur(3px) saturate(.82);
-  transform:scale(1.06);
+  filter:saturate(.92);
+  transform:none;
 }
 .hero-pildiga::after{
   content:"";
@@ -137,8 +137,8 @@ p{margin:0 0 1.1em}
   inset:0;
   z-index:-1;
   background:
-    linear-gradient(to top, rgba(26,19,16,.97) 0%, rgba(26,19,16,.9) 34%, rgba(26,19,16,.66) 62%, rgba(26,19,16,.5) 100%),
-    linear-gradient(to right, rgba(26,19,16,.8) 0%, rgba(26,19,16,.34) 62%, rgba(26,19,16,.2) 100%);
+    linear-gradient(to top, rgba(26,19,16,.97) 0%, rgba(26,19,16,.93) 30%, rgba(26,19,16,.74) 58%, rgba(26,19,16,.5) 100%),
+    linear-gradient(to right, rgba(26,19,16,.86) 0%, rgba(26,19,16,.42) 58%, rgba(26,19,16,.24) 100%);
 }
 .hero-sisu{
   padding-top:clamp(5rem,14vw,8rem);
@@ -189,6 +189,44 @@ p{margin:0 0 1.1em}
 .galerii img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px}
 .galerii figcaption{padding-top:.8rem;font-size:.93rem;color:var(--tekst-tume)}
 .galerii figcaption strong{display:block;color:var(--tekst);font-weight:500;font-size:1rem;margin-bottom:.15rem}
+
+/* Slaidid galeriis */
+.slaidid{position:relative;width:100%;aspect-ratio:4/3;border-radius:2px;overflow:hidden;background:var(--susi)}
+.slaidid img.slaid{
+  position:absolute;inset:0;
+  width:100%;height:100%;object-fit:cover;
+  opacity:0;
+  animation:slaidivahetus 9s infinite;
+}
+.slaidid img.slaid:nth-of-type(2){animation-delay:4.5s}
+@keyframes slaidivahetus{
+  0%{opacity:0}
+  6%{opacity:1}
+  44%{opacity:1}
+  50%{opacity:0}
+  100%{opacity:0}
+}
+.slaidid-margis{
+  position:absolute;left:12px;bottom:12px;z-index:2;
+  font-family:"Plex Mono",monospace;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;
+  background:rgba(26,19,16,.86);color:var(--aktsent);
+  border:1px solid var(--joon-tugev);border-radius:2px;padding:5px 9px;
+}
+@media (prefers-reduced-motion:reduce){
+  .slaidid img.slaid{animation:none;opacity:0}
+  .slaidid img.slaid.slaid-aktiivne{opacity:1}
+}
+
+/* Joonised */
+.galerii-joonised{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;margin-top:2.6rem}
+@media (min-width:900px){.galerii-joonised{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.galerii-joonised figure{margin:0}
+@media (min-width:900px){.galerii-joonised .joonis-lai{grid-column:span 2}}
+.galerii-joonised a{display:block;border-radius:2px;background:#fff;border:1px solid var(--joon);padding:14px;transition:border-color .18s ease}
+.galerii-joonised a:hover{border-color:var(--aktsent)}
+.galerii-joonised img{width:100%;height:auto;display:block}
+.galerii-joonised figcaption{padding-top:.85rem;font-size:.93rem;color:var(--tekst-tume)}
+.galerii-joonised figcaption strong{display:block;color:var(--tekst);font-weight:500;font-size:1rem;margin-bottom:.15rem}
 
 /* Kohatäide */
 .kohatäide{

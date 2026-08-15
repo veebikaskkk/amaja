@@ -44,11 +44,19 @@ pildiikooni kuskil ei ole.
 ### Veel vaja, tööde leht
 
 `projekt-09.webp` ja `projekt-10.webp`, kaks fotot valminud objektidest.
+Rohkem kohatäiteid lehel ei ole.
 
-### Veel vaja, jooniste leht
+### Jooniste leht on täis
 
-`joonis-01.webp` kuni `joonis-10.webp`, kokku kümme väljavõtet
-projektidest. Plaanid, lõiked ja vaated.
+Kaksteist joonist on töödeldud ja lehel sees, kvaliteediga 94 ja ilma
+suurendamiseta, sest lähtefailid olid ligikaudu 900 px laiad. Iga joonis
+avaneb klõpsuga täissuuruses omal aadressil, nii et mõõdud ja
+tarindikirjeldused jäävad loetavaks. Sektsiooni ja konstruktsioonisõlmede
+joonis on püstformaadis, seetõttu võtab see laual kaks veergu, et kogu
+seletuskiri oleks korraga nähtav.
+
+Kui originaalid on olemas suuremana, saada need, siis teen joonised
+uuesti suurema lahutusega.
 
 Kui saadad need failid, töötlen need samas mahus: WebP, EXIF ja
 GPS-koordinaadid eemaldatud, kirjeldav failinimi, alt-tekst täislausena.
