@@ -23,62 +23,29 @@ korteri 51-12 tegelik indeks erineb, paranda see `index.html` ja
 
 ---
 
-## 2. Mis pildid on veel vaja lisada
+## 2. Pildid
 
-Kolm fotot on juba töödeldud ja lehel sees. Puuduvad kohad on
-triibulised kohatäited, millel on peal vajaliku faili nimi. Katkist
-pildiikooni kuskil ei ole.
+Kõik pildid on lehel olemas. Kohatäiteid ei ole enam üheski kohas.
 
-### Juba olemas
+**Fotod ja visualiseeringud, 7 tükki** tööde galeriis. Üks neist,
+"Eramu juurdeehitus", on kaks vahelduvat vaadet ühel plaadil.
 
-| Fail | Roll |
-|---|---|
-| `pildid/eramu-tume-puitfassaad-hero-01.webp` | Avalehe hero |
-| `pildid/eramu-tume-puitfassaad-01.webp` | Galerii, objekt 01 |
-| `pildid/eramu-puitfassaad-metsas-02.webp` | Galerii, objekt 02 |
-| `pildid/korterelamu-visualiseering-03.webp` | Galerii, objekt 03 |
-| `pildid/*-pisi.webp` | Pisipildid varuks, praegu kasutuses ei ole |
-| `pildid/a-maja-logo-hele.png` | Logo päises ja jaluses |
-| `pildid/a-maja-logo-tume.png` | Logo heledale taustale, varuks |
+**Joonised, 12 tükki.** Kõik ühesuurused plaadid, joonis mahutatakse
+plaadi sisse tervikuna. Klõps avab joonise valgustis samal lehel.
 
-### Veel vaja, tööde leht
+Kõik on WebP, EXIF ja GPS-koordinaadid eemaldatud, failinimed
+kirjeldavad, alt-tekstid täislausetena. Joonised on kvaliteediga 94 ja
+ilma suurendamiseta, sest lähtefailid olid ligikaudu 900 px laiad.
 
-`projekt-09.webp` ja `projekt-10.webp`, kaks fotot valminud objektidest.
-Rohkem kohatäiteid lehel ei ole.
+**Hero pildi kvaliteet.** Suvekohviku render on 1800 px lai, mis on
+korras. Kui mõnest joonisest on originaal olemas suuremana, saada, siis
+teen selle uuesti suurema lahutusega, sest praeguse pealt suurendades
+jõuab piir kätte.
 
-### Jooniste leht on täis
-
-Kaksteist joonist on töödeldud ja lehel sees, kvaliteediga 94 ja ilma
-suurendamiseta, sest lähtefailid olid ligikaudu 900 px laiad. Iga joonis
-avaneb klõpsuga täissuuruses omal aadressil, nii et mõõdud ja
-tarindikirjeldused jäävad loetavaks. Sektsiooni ja konstruktsioonisõlmede
-joonis on püstformaadis, seetõttu võtab see laual kaks veergu, et kogu
-seletuskiri oleks korraga nähtav.
-
-Kui originaalid on olemas suuremana, saada need, siis teen joonised
-uuesti suurema lahutusega.
-
-Kui saadad need failid, töötlen need samas mahus: WebP, EXIF ja
-GPS-koordinaadid eemaldatud, kirjeldav failinimi, alt-tekst täislausena.
-Iga objekti kohta on vaja teada asukoht ja aasta, sest neid ma fotolt ei
-näe ega hakka arvama.
-
-### Alt-tekstid olemasolevatel piltidel
-
-- `eramu-tume-puitfassaad-hero-01.webp`: Tumeda puitfassaadi ja
-  valtsplekk-katusega üksikelamu metsaserval, ees kruusatee ja terrass,
-  valmis töö.
-- `eramu-tume-puitfassaad-01.webp`: Tumeda puitfassaadiga üksikelamu
-  kõrge viilkatusega, ees kruusatee ja hooldusvaba haljastus, valmis töö.
-- `eramu-puitfassaad-metsas-02.webp`: Halliks patineerunud vertikaalse
-  puitlaudisega elamu männimetsa serval, otsaseinas heledast tellisest
-  maht, valmis töö.
-- `korterelamu-visualiseering-03.webp`: Tumeroheliseks värvitud puidust
-  korterelamu tänavavaate visualiseering, prantsuse rõdud ja puitaknad.
-
-**Hero pildi kvaliteet.** Antud lähtefail oli 894 pikslit lai, mis on
-suure ekraani jaoks napp. Kui originaal on olemas suuremana, saada see,
-siis teen hero uuesti 1800 piksli laiuselt.
+**Mida pildilt näha ei ole.** Objektide asukohti ja aastaid ma ei tea,
+välja arvatud suvekohvik, mille sildil on Raatuse tänav 2 peal.
+Kohanimi failinimes ja alt-tekstis on kohaliku pildiotsingu jaoks
+kõige mõjusam üksik täiendus, mida siin veel teha saab. Vaata punkt 11.
 
 ---
 
@@ -263,3 +230,119 @@ Kerivas konteineris absoluutselt positsioneeritud elemente ei ole.
     Kontrollitud, et õ ä ö ü on latin-alamhulgas ja ž š latin-ext-is.
 18. API võtit üheski failis ei ole, ainult `process.env.RESEND_API_KEY`.
 19. Vana lehte ei olnud, seega ümbersuunamisi vaja ei ole.
+
+---
+
+## 11. SEO baas, mis otsingutega leitakse
+
+Lehel ei ole ostetud reklaami ega nippe. Baas koosneb kolmest asjast:
+iga leht sihib ühte päris küsimust, sisu on eesti keeles ja konkreetne,
+ning struktuurandmed ütlevad Google'ile otse, mis ettevõttega on tegu.
+
+### Iga lehe siht
+
+| Leht | Title | Mida sihib |
+|---|---|---|
+| `index.html` | Arhitektuurne projekteerimine üle Eesti | üldotsing, brändiotsing |
+| `teenused.html` | Projekteerimisteenused | teenusepõhised otsingud |
+| `tood.html` | Tehtud tööd ja joonised | portfoolio, pildiotsing |
+| `tagasiside.html` | Klientide tagasiside | usaldusotsingud, brändi + arvustus |
+| `kontakt.html` | Kontakt ja hinnapäring | ostuvalmis otsingud |
+
+### Realistlikud otsingud, kus leht võib kuvada
+
+**Brändiotsingud, tugevaim positsioon.** Siin peaks leht jõudma esikohale
+üsna kiiresti, sest konkurentsi ei ole.
+
+- a-maja, a-maja oü, amaja arhitekt
+- kaspar lätt arhitekt
+
+**Teenusotsingud, keskmine konkurents.** Nendes on realistlik jõuda
+esilehele mõne kuu jooksul, kui Google'i ettevõtteprofiil on ka tehtud.
+
+- eramu projekt, eramu ehitusprojekt, üksikelamu projekteerimine
+- juurdeehituse projekt, rekonstrueerimise projekt
+- abihoone projekt, aiamaja projekt, saunamaja projekt
+- moodulmaja ehitusprojekt
+- eelprojekt ehitusteatise mahus, ehitusteatise projekt
+- arhitektuurne põhiprojekt, arhitektuurne projekteerimine
+- korterelamu projekteerimine, ärihoone projekteerimine
+
+**Pika sabaga otsingud, kus võit on kõige tõenäolisem.** Need on
+väiksema mahuga, aga otsija on ostuvalmis.
+
+- kas mul on vaja ehitusluba või ehitusteatis
+- kes suhtleb omavalitsusega ehitusloa taotlemisel
+- diplomeeritud arhitekt tase 7
+- arhitekt kes mõtleb kaasa
+- eramu projekt üle eesti
+
+**Kohalikud otsingud.** Siin on praegu suurim puudujääk, vaata allpool.
+
+- arhitekt tallinn, arhitektibüroo tallinn, projekteerija harjumaa
+
+### Mis otsingutega leiab pilte
+
+Pildiotsing käib kolme asja pealt: failinimi, alt-tekst ja `sitemap.xml`
+`image:image` plokk, kus on iga pildi pealkiri ja kirjeldus. Kõik kolm on
+igal pildil olemas, mis on see osa, mille enamik lehti tegemata jätab.
+
+**Fotod ja visualiseeringud leitakse otsingutega nagu:**
+
+- tume puitfassaad eramu, vertikaalne puitlaudis maja
+- punane puitfassaad eramu, punane viilkatusega maja
+- päikesepaneelidega eramu, kelpkatus päikesepaneelid
+- eramu juurdeehitus puitribifassaad
+- korterelamu puitfassaad visualiseering
+- suvekohvik projekt, katuseterrassiga kohvik
+
+**Joonised leitakse otsingutega nagu:**
+
+- eramu lõige joonis, sektsioon A-A joonis
+- korruse plaan joonis, esimese korruse plaan
+- katuseplaan joonis
+- eramu vaated joonis, eestvaade mõõtkava 1:50
+- konstruktsioonisõlmed joonis, välisseina tarind
+
+Joonised on siin ootamatult väärtuslik vara. Enamik arhitektibüroosid ei
+pane jooniseid üldse üles, seetõttu on konkurents nendel otsingutel
+väike ja need toovad täpselt õiget tüüpi külastajat, kes teab, mida
+projekt sisaldab.
+
+### Mis on tehtud
+
+- Igal lehel unikaalne title ja description, mitte kopeeritud
+- Canonical URL igal lehel
+- `ProfessionalService` struktuurandmed: nimi, telefon, e-post, aadress,
+  KMKR, kutsetunnistus 203786 ja kõik 15 maakonda `areaServed` all
+- `Service` ja `Offer` iga kuue teenuse kohta
+- `BreadcrumbList` igal alamlehel
+- `sitemap.xml` kõigi lehtede ja 21 pildiga
+- `robots.txt`, mis lubab indekseerida ja blokeerib `/api/`
+- Semantiline HTML, üks h1 lehel, tasemed ei hüppa
+- Sisemised lingid sisu sees, mitte ainult menüüs
+
+### Mis on tegemata ja mida see maksab
+
+**Google'i ettevõtteprofiil, kõige suurem üksik võit.** Ilma selleta ei
+kuvata lehte kaardil ega kohalikus kolmikus, mis on enamiku
+teenuseotsingute puhul see osa, mida päriselt vaadatakse. Tasuta, tund
+aega tööd. Juhend on punktis 6.
+
+**Kohanimed piltide juures.** Praegu on ainult suvekohvikul asukoht
+teada. Kui saadad ülejäänud objektide asukohad, saab failinimed ja
+alt-tekstid täiendada kujul `eramu-punane-puitfassaad-viimsi.webp`. See
+avab otsingud stiilis "eramu projekt viimsi", mis on palju vähem
+konkurentsi kui üldine "eramu projekt".
+
+**Artiklid.** Jätsin artiklite lehe teadlikult välja, sest sisu ei ole ja
+tühi nimekiri kahjustaks. Aga just artiklid oleksid see, mis toob pika
+sabaga otsinguid. Kaks kuni kolm sisulist teksti, näiteks "millal
+piisab ehitusteatisest ja millal on vaja ehitusluba", tooksid tõenäoliselt
+rohkem külastajaid kui kogu ülejäänud leht kokku.
+
+**Aeg.** Uus domeen ei asu esikohale kohe. Indekseerimine võtab
+tavaliselt paar nädalat, positsioonid stabiliseeruvad paari kuuga.
+Lisa leht Google Search Console'i kohe pärast avaldamist ja esita
+`sitemap.xml`. Domain-property puhul käib väljale terve aadress,
+URL-prefix-property puhul ainult `sitemap.xml`.

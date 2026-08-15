@@ -38,6 +38,131 @@
   }
 
   var vorm = document.getElementById("paringu-vorm");
+
+  /* ---------- Valgusti ---------- */
+  var lingid = Array.prototype.slice.call(
+    document.querySelectorAll(".galerii-joonised a[href]")
+  );
+
+  if (lingid.length) {
+    var kirjed = lingid.map(function (a) {
+      var fig = a.closest("figure");
+      var tugev = fig ? fig.querySelector("figcaption strong") : null;
+      var pealkiri = tugev ? tugev.textContent.trim() : "";
+      var kirjeldus = "";
+      if (fig) {
+        var cap = fig.querySelector("figcaption");
+        if (cap) kirjeldus = cap.textContent.replace(pealkiri, "").trim();
+      }
+      var img = a.querySelector("img");
+      return {
+        href: a.getAttribute("href"),
+        alt: img ? img.getAttribute("alt") : "",
+        pealkiri: pealkiri,
+        kirjeldus: kirjeldus
+      };
+    });
+
+    var kest = document.createElement("div");
+    kest.className = "valgusti";
+    kest.setAttribute("role", "dialog");
+    kest.setAttribute("aria-modal", "true");
+    kest.setAttribute("aria-label", "Joonis suurendatult");
+    kest.innerHTML =
+      '<div class="valgusti-sisu">' +
+      '<button type="button" class="valgusti-nupp valgusti-sulge" aria-label="Sulge">\u00D7</button>' +
+      '<button type="button" class="valgusti-nupp valgusti-eelmine" aria-label="Eelmine joonis">\u2190</button>' +
+      '<button type="button" class="valgusti-nupp valgusti-jargmine" aria-label="Järgmine joonis">\u2192</button>' +
+      '<div class="valgusti-raam"><img alt=""></div>' +
+      '<p class="valgusti-pealdis"><span class="valgusti-tekst"></span>' +
+      '<span class="valgusti-loendur"></span></p>' +
+      "</div>";
+    document.body.appendChild(kest);
+
+    var pilt = kest.querySelector(".valgusti-raam img");
+    var tekst = kest.querySelector(".valgusti-tekst");
+    var loendur = kest.querySelector(".valgusti-loendur");
+    var sulgeNupp = kest.querySelector(".valgusti-sulge");
+    var eelmineNupp = kest.querySelector(".valgusti-eelmine");
+    var jargmineNupp = kest.querySelector(".valgusti-jargmine");
+    var raam = kest.querySelector(".valgusti-raam");
+    var praegu = 0;
+    var tagasiFookus = null;
+
+    if (kirjed.length < 2) {
+      eelmineNupp.hidden = true;
+      jargmineNupp.hidden = true;
+    }
+
+    function naitaJoonis(i) {
+      praegu = (i + kirjed.length) % kirjed.length;
+      var k = kirjed[praegu];
+      pilt.setAttribute("src", k.href);
+      pilt.setAttribute("alt", k.alt);
+      tekst.innerHTML = "";
+      var tugev = document.createElement("strong");
+      tugev.textContent = k.pealkiri;
+      tekst.appendChild(tugev);
+      if (k.kirjeldus) {
+        tekst.appendChild(document.createTextNode(" " + k.kirjeldus));
+      }
+      loendur.textContent = praegu + 1 + " / " + kirjed.length;
+      raam.scrollTop = 0;
+      raam.scrollLeft = 0;
+    }
+
+    function ava(i, algataja) {
+      tagasiFookus = algataja || null;
+      naitaJoonis(i);
+      kest.setAttribute("data-avatud", "");
+      document.body.classList.add("valgusti-lahti");
+      sulgeNupp.focus();
+    }
+
+    function sulge() {
+      kest.removeAttribute("data-avatud");
+      document.body.classList.remove("valgusti-lahti");
+      if (tagasiFookus) tagasiFookus.focus();
+    }
+
+    lingid.forEach(function (a, i) {
+      a.addEventListener("click", function (e) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+        e.preventDefault();
+        ava(i, a);
+      });
+    });
+
+    sulgeNupp.addEventListener("click", sulge);
+    eelmineNupp.addEventListener("click", function () { naitaJoonis(praegu - 1); });
+    jargmineNupp.addEventListener("click", function () { naitaJoonis(praegu + 1); });
+
+    kest.addEventListener("click", function (e) {
+      if (e.target === kest || e.target.classList.contains("valgusti-sisu")) sulge();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (!kest.hasAttribute("data-avatud")) return;
+      if (e.key === "Escape") { sulge(); return; }
+      if (kirjed.length < 2) return;
+      if (e.key === "ArrowLeft") naitaJoonis(praegu - 1);
+      if (e.key === "ArrowRight") naitaJoonis(praegu + 1);
+      if (e.key === "Tab") {
+        var fookustatavad = [sulgeNupp, eelmineNupp, jargmineNupp].filter(function (n) {
+          return !n.hidden;
+        });
+        var esimene = fookustatavad[0];
+        var viimane = fookustatavad[fookustatavad.length - 1];
+        if (e.shiftKey && document.activeElement === esimene) {
+          e.preventDefault(); viimane.focus();
+        } else if (!e.shiftKey && document.activeElement === viimane) {
+          e.preventDefault(); esimene.focus();
+        }
+      }
+    });
+  }
+  /* ---------- Valgusti lõpp ---------- */
+
   if (!vorm) return;
 
   var teade = document.getElementById("vormi-teade");

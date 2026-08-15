@@ -231,7 +231,7 @@ p{margin:0 0 1.1em}
 .galerii-joonised a:hover{border-color:var(--aktsent)}
 .galerii-joonised img{width:100%;height:100%;object-fit:contain;display:block}
 .galerii-joonised a::after{
-  content:"Ava suuremalt";
+  content:"Vaata suurelt";
   position:absolute;right:10px;bottom:10px;
   font-family:"Plex Mono",monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;
   background:rgba(26,19,16,.9);color:var(--aktsent);
@@ -242,17 +242,62 @@ p{margin:0 0 1.1em}
 .galerii-joonised figcaption{padding-top:.8rem;font-size:.93rem;color:var(--tekst-tume)}
 .galerii-joonised figcaption strong{display:block;color:var(--tekst);font-weight:500;font-size:1rem;margin-bottom:.15rem}
 
-/* Kohatäide */
-.kohatäide{
-  width:100%;aspect-ratio:4/3;border-radius:2px;
-  border:1px dashed var(--joon-tugev);
-  background-image:repeating-linear-gradient(45deg,rgba(201,161,103,.09) 0,rgba(201,161,103,.09) 10px,transparent 10px,transparent 20px);
-  background-color:var(--puit);
-  display:flex;align-items:center;justify-content:center;padding:1.4rem;text-align:center;
+/* Valgusti */
+.valgusti{
+  position:fixed;inset:0;z-index:200;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(16,11,9,.94);
+  padding:clamp(12px,3vw,40px);
+  opacity:0;visibility:hidden;
+  transition:opacity .2s ease,visibility .2s ease;
 }
-.kohatäide span{font-family:"Plex Mono",monospace;font-size:.72rem;color:var(--aktsent);letter-spacing:.04em;overflow-wrap:anywhere}
-.kohatäide-hero{aspect-ratio:16/9}
-.kohatäide-lai{aspect-ratio:16/10}
+.valgusti[data-avatud]{opacity:1;visibility:visible}
+.valgusti-sisu{
+  position:relative;
+  display:flex;flex-direction:column;
+  width:100%;height:100%;
+  max-width:1500px;
+  gap:14px;
+}
+.valgusti-raam{
+  flex:1;min-height:0;
+  background:#fff;border-radius:2px;
+  padding:clamp(10px,1.6vw,22px);
+  display:flex;align-items:center;justify-content:center;
+  overflow:auto;
+  -webkit-overflow-scrolling:touch;
+}
+.valgusti-raam img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}
+.valgusti-pealdis{
+  flex:none;color:var(--tekst-tume);font-size:.92rem;
+  display:flex;flex-wrap:wrap;gap:.4rem 1rem;align-items:baseline;
+  padding-right:64px;
+}
+.valgusti-pealdis strong{color:var(--tekst);font-weight:500}
+.valgusti-loendur{font-family:"Plex Mono",monospace;font-size:.72rem;letter-spacing:.12em;color:var(--aktsent)}
+
+.valgusti-nupp{
+  position:absolute;z-index:2;
+  display:flex;align-items:center;justify-content:center;
+  width:48px;height:48px;
+  background:rgba(26,19,16,.9);color:var(--tekst);
+  border:1px solid var(--joon-tugev);border-radius:2px;
+  font-size:1.4rem;line-height:1;cursor:pointer;
+  transition:border-color .18s ease,background .18s ease;
+}
+.valgusti-nupp:hover{border-color:var(--aktsent);color:var(--aktsent)}
+.valgusti-sulge{top:0;right:0}
+.valgusti-eelmine{left:8px;top:50%;transform:translateY(-50%)}
+.valgusti-jargmine{right:8px;top:50%;transform:translateY(-50%)}
+
+@media (max-width:700px){
+  .valgusti-eelmine{left:4px}
+  .valgusti-jargmine{right:4px}
+  .valgusti-sulge{top:-2px;right:-2px}
+  .valgusti-pealdis{font-size:.85rem;padding-right:56px}
+}
+
+body.valgusti-lahti{overflow:hidden}
 
 /* Kaks veergu */
 .kaks-veergu{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(2rem,4vw,4rem)}
