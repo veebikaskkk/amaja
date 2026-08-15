@@ -6,9 +6,9 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://amaja.ee/pildid/eramu-tume-puitfassaad-hero-01.webp</image:loc>
-      <image:title>Üksikelamu tumeda puitfassaadiga</image:title>
-      <image:caption>Tumeda puitfassaadi ja valtsplekk-katusega üksikelamu metsaserval, valmis töö.</image:caption>
+      <image:loc>https://amaja.ee/pildid/suvekohvik-raatuse-tanav-tartu-hero.webp</image:loc>
+      <image:title>Suvekohvik Raatuse tänaval Tartus</image:title>
+      <image:caption>Suvekohviku hoone projekt, puitlaudisega paviljon ja haljastatud katuseterrass.</image:caption>
     </image:image>
   </url>
   <url>
@@ -20,6 +20,31 @@
     <loc>https://amaja.ee/tood.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://amaja.ee/pildid/suvekohvik-raatuse-tanav-tartu-projekt.webp</image:loc>
+      <image:title>Suvekohvik Raatuse tänaval Tartus</image:title>
+      <image:caption>Suvekohviku hoone projekt, tumeda puitlaudisega paviljon ja haljastatud katuseterrass pargis.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amaja.ee/pildid/eramu-punane-puitfassaad-varjualusega.webp</image:loc>
+      <image:title>Üksikelamu punase puitfassaadiga</image:title>
+      <image:caption>Punase vertikaalse puitlaudisega üksikelamu järsu viilkatuse ja räästa alla viidud autovarjualusega.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amaja.ee/pildid/eramu-tume-puitfassaad-paikesepaneelidega.webp</image:loc>
+      <image:title>Kahekorruseline elamu päikesepaneelidega</image:title>
+      <image:caption>Tumeda puitlaudisega kahekorruseline üksikelamu kelpkatuse ja katusele paigaldatud päikesepaneelidega.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amaja.ee/pildid/eramu-juurdeehitus-puitribifassaadiga.webp</image:loc>
+      <image:title>Eramu juurdeehitus puitribifassaadiga</image:title>
+      <image:caption>Olemasoleva krohvitud eramu kõrvale projekteeritud juurdeehitus puitribifassaadiga.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amaja.ee/pildid/juurdeehituse-puitribifassaad-lahivaade.webp</image:loc>
+      <image:title>Juurdeehituse puitribifassaad lähivaates</image:title>
+      <image:caption>Vertikaalsed puitribid varjestavad kahekorruselise trepimahu.</image:caption>
+    </image:image>
     <image:image>
       <image:loc>https://amaja.ee/pildid/eramu-tume-puitfassaad-01.webp</image:loc>
       <image:title>Üksikelamu tumeda puitfassaadiga</image:title>

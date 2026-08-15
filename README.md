@@ -43,8 +43,7 @@ pildiikooni kuskil ei ole.
 
 ### Veel vaja, tööde leht
 
-`projekt-04.webp` kuni `projekt-10.webp`, kokku seitse fotot valminud
-objektidest.
+`projekt-09.webp` ja `projekt-10.webp`, kaks fotot valminud objektidest.
 
 ### Veel vaja, jooniste leht
 
@@ -245,8 +244,9 @@ Kerivas konteineris absoluutselt positsioneeritud elemente ei ole.
 11. Jaluses on täisnimi, õiguslik vorm, registrikood, KMKR, aadress,
     e-post ja telefon.
 12. Privaatsusleht on olemas ja lingitud nii vormi juurest kui jalusest.
-13. Väljamõeldud fakte, tagasisidet ega numbreid ei ole. Kõik seitse
-    hinnangut on need, mis Hange.ee-st tulid.
+13. Väljamõeldud fakte, tagasisidet ega numbreid ei ole. Kõik hinnangud
+    on need, mis Hange.ee-st tulid. Hinnangute arvu lehel ei nimetata,
+    et see ei vananeks uute hinnangute lisandudes.
 14. Iga värvipaar vastab kontrastile 4.5:1, kontrollitud arvutusega.
     Madalaim on 5,57.
 15. Fookusraam on klaviatuuriga nähtav, `:focus-visible` 2 px aktsent.

@@ -108,12 +108,48 @@ p{margin:0 0 1.1em}
 .nupurida{display:flex;flex-wrap:wrap;gap:14px;margin-top:2rem}
 
 /* Hero */
-.hero{padding:clamp(3rem,7vw,6rem) 0 clamp(2rem,5vw,4rem);border-bottom:1px solid var(--joon)}
-.hero-ruudustik{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(2rem,4vw,3.5rem);align-items:center}
-@media (min-width:1024px){.hero-ruudustik{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr)}}
 .juhtlause{font-size:1.13rem;color:var(--tekst-tume);max-width:56ch}
-.hero-pilt{margin:0}
-.hero-pilt img{width:100%;border-radius:2px}
+
+.hero-pildiga{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  border-bottom:1px solid var(--joon);
+  display:flex;
+  align-items:flex-end;
+  min-height:clamp(520px,78vh,760px);
+  background:var(--susi);
+}
+.hero-taust{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 58%;
+  z-index:-2;
+  filter:blur(3px) saturate(.82);
+  transform:scale(1.06);
+}
+.hero-pildiga::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:
+    linear-gradient(to top, rgba(26,19,16,.97) 0%, rgba(26,19,16,.9) 34%, rgba(26,19,16,.66) 62%, rgba(26,19,16,.5) 100%),
+    linear-gradient(to right, rgba(26,19,16,.8) 0%, rgba(26,19,16,.34) 62%, rgba(26,19,16,.2) 100%);
+}
+.hero-sisu{
+  padding-top:clamp(5rem,14vw,8rem);
+  padding-bottom:clamp(3rem,6vw,4.5rem);
+  max-width:var(--raam);
+}
+.hero-sisu h1{max-width:15ch;text-shadow:0 2px 24px rgba(26,19,16,.75)}
+.hero-sisu .juhtlause{color:#E2D8CB;max-width:54ch;text-shadow:0 1px 16px rgba(26,19,16,.85)}
+@media (min-width:1024px){
+  .hero-sisu h1,.hero-sisu .juhtlause{max-width:none;width:min(100%,62ch)}
+}
 
 /* Naitajad */
 .usaldus{border-bottom:1px solid var(--joon);background:var(--susi)}
