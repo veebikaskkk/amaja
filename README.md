@@ -202,6 +202,11 @@ loetlen ainult selle, mis koodis on.
 | alates 1100 px | Teenusekaardid neljaveeruliseks, galerii kolmeveeruliseks. |
 | alates 1240 px | Sisu laius lukustub, veerised kasvavad. |
 
+Päise kõrgus on muutuja `--pais-korgus`, praegu 78 px. Kõik ankrud
+kasutavad seda `scroll-margin-top` sees, seetõttu ei jää sihtkoht
+kleepuva päise alla peitu. Kui päise kõrgust muuta, piisab muutuja
+muutmisest ühes kohas.
+
 Puutealad on vähemalt 44 px, nupud 48 px, vormiväljad 50 px.
 Pikad e-posti aadressid murduvad `overflow-wrap` abil.
 Kerivas konteineris absoluutselt positsioneeritud elemente ei ole.

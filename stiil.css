@@ -22,11 +22,23 @@
   --joon:rgba(201,161,103,.22);
   --joon-tugev:rgba(201,161,103,.42);
   --raam:1240px;
+  --pais-korgus:78px;
 }
 
 *,*::before,*::after{box-sizing:border-box}
 
 html{scroll-behavior:smooth}
+
+/* Ankrud ei tohi kleepuva päise alla jääda */
+:target{scroll-margin-top:calc(var(--pais-korgus) + 28px)}
+[id]{scroll-margin-top:calc(var(--pais-korgus) + 28px)}
+.teenus[id]{scroll-margin-top:calc(var(--pais-korgus) + 40px)}
+main[id]{scroll-margin-top:0}
+@media (max-width:900px){
+  [id],:target{scroll-margin-top:calc(var(--pais-korgus) + 16px)}
+  .teenus[id]{scroll-margin-top:calc(var(--pais-korgus) + 20px)}
+}
+
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
@@ -75,7 +87,7 @@ p{margin:0 0 1.1em}
 
 /* Pais */
 .pais{position:sticky;top:0;z-index:60;background:rgba(26,19,16,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--joon)}
-.pais-sisu{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:78px}
+.pais-sisu{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:var(--pais-korgus)}
 .logo{display:block;line-height:0;padding:6px 0}
 .logo img{width:auto;height:44px}
 
