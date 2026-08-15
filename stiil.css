@@ -218,14 +218,28 @@ p{margin:0 0 1.1em}
 }
 
 /* Joonised */
-.galerii-joonised{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;margin-top:2.6rem}
-@media (min-width:900px){.galerii-joonised{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.galerii-joonised{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;margin-top:2.6rem}
+@media (min-width:700px){.galerii-joonised{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1100px){.galerii-joonised{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .galerii-joonised figure{margin:0}
-@media (min-width:900px){.galerii-joonised .joonis-lai{grid-column:span 2}}
-.galerii-joonised a{display:block;border-radius:2px;background:#fff;border:1px solid var(--joon);padding:14px;transition:border-color .18s ease}
+.galerii-joonised a{
+  position:relative;display:block;border-radius:2px;
+  background:#fff;border:1px solid var(--joon);
+  aspect-ratio:4/3;padding:12px;
+  transition:border-color .18s ease;
+}
 .galerii-joonised a:hover{border-color:var(--aktsent)}
-.galerii-joonised img{width:100%;height:auto;display:block}
-.galerii-joonised figcaption{padding-top:.85rem;font-size:.93rem;color:var(--tekst-tume)}
+.galerii-joonised img{width:100%;height:100%;object-fit:contain;display:block}
+.galerii-joonised a::after{
+  content:"Ava suuremalt";
+  position:absolute;right:10px;bottom:10px;
+  font-family:"Plex Mono",monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;
+  background:rgba(26,19,16,.9);color:var(--aktsent);
+  padding:4px 8px;border-radius:2px;
+  opacity:0;transition:opacity .18s ease;
+}
+.galerii-joonised a:hover::after,.galerii-joonised a:focus-visible::after{opacity:1}
+.galerii-joonised figcaption{padding-top:.8rem;font-size:.93rem;color:var(--tekst-tume)}
 .galerii-joonised figcaption strong{display:block;color:var(--tekst);font-weight:500;font-size:1rem;margin-bottom:.15rem}
 
 /* Kohatäide */
