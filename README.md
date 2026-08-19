@@ -27,14 +27,14 @@ korteri 51-12 tegelik indeks erineb, paranda see `index.html` ja
 
 Kõik pildid on lehel olemas. Kohatäiteid ei ole enam üheski kohas.
 
-**Fotod ja visualiseeringud, 7 tükki** tööde galeriis. Üks neist,
-"Eramu juurdeehitus", on kaks vahelduvat vaadet ühel plaadil.
+**Fotod ja visualiseeringud, 15 tükki** portfoolios, neist 7 on uued
+3D visuaalid. Avapildiks on musta puitlaudisega metsamaja, mis on
+eraldi optimeeritud kahes suuruses, et mobiil ei laeks arvutiversiooni.
 
-Tööde galerii ei kärbi pilte. Iga foto on oma loomulikus kuvasuhtes ja
-laotud veergudesse nii, et kõrgused täidavad ruumi ilma vahedeta.
-Klõps avab foto valgustis samal lehel, sama nagu joonised. Ainus koht,
-kus kärbitakse, on avalehe kolmene eelvaade, sest seal on ühesuurused
-plaadid loetavamad ja terve pilt on ühe klõpsu kaugusel tööde lehel.
+Portfoolio on nüüd ühtlane ruudustik, kus osa töid võtab kogu laiuse.
+Pildid on kärbitud ühtsesse kuvasuhtesse, sest portfooliona mõjub see
+palju rahulikumalt kui erikõrgused. Terve, kärpimata pilt on alati ühe
+klõpsu kaugusel: klõps avab foto valgustis samal lehel.
 
 **Joonised, 12 tükki.** Kõik ühesuurused plaadid, joonis mahutatakse
 plaadi sisse tervikuna. Klõps avab joonise valgustis samal lehel.
@@ -42,6 +42,28 @@ plaadi sisse tervikuna. Klõps avab joonise valgustis samal lehel.
 Kõik on WebP, EXIF ja GPS-koordinaadid eemaldatud, failinimed
 kirjeldavad, alt-tekstid täislausetena. Joonised on kvaliteediga 94 ja
 ilma suurendamiseta, sest lähtefailid olid ligikaudu 900 px laiad.
+
+### Logo
+
+Logo on vektor, SVG. Ta on trassitud puhasteks kõverateks, seega on igal
+suurusel terav ja fail on väike. Kaustas on kolm varianti:
+
+- `pildid/a-maja-logo-hele.svg` tumedale taustale
+- `pildid/a-maja-logo-tume.svg` heledale taustale
+- `pildid/a-maja-logo.svg` võtab värvi ümbritsevast tekstist
+
+PNG-versioonid on samuti olemas, nende jaoks, kus vektorit kasutada ei
+saa. Faviconid ja jagamispilt on kõik samast vektorist tehtud.
+
+Avalehe suur logo on HTML-i sisse kirjutatud SVG-na, mitte pildina.
+Seda on vaja selleks, et logo saaks end lehe avanemisel joonistada:
+esmalt tõmmatakse kontuur joonena, siis täidetakse kuju ja joon kaob.
+Animatsioon kestab umbes kolm sekundit. Kui külastajal on
+operatsioonisüsteemis liikumise vähendamine sisse lülitatud, kuvatakse
+logo kohe lõppolekus.
+
+See lisab avalehele umbes 22 KB, pakituna umbes 6 KB. Header ja jalus
+kasutavad tavalist pildiviidet, sest seal animatsiooni vaja ei ole.
 
 **Hero pildi kvaliteet.** Suvekohviku render on 1800 px lai, mis on
 korras. Kui mõnest joonisest on originaal olemas suuremana, saada, siis
@@ -144,21 +166,32 @@ tõsta ei saa, aga sama klient võib mõlemas kohas arvustuse jätta.
 ## 7. Struktuur
 
 ```
-index.html          Avaleht
+index.html          Avaleht, täisekraan avapilt ja tööde ruudustik
+tood.html           Portfoolio, 15 tööd ja 12 joonist
 teenused.html       Kuus teenust eraldi alajaotustena
-tood.html           Objektid ja joonised
-tagasiside.html     Seitse hinnangut Hange.ee-st
+meist.html          Miks meid, näitajad
+tagasiside.html     Klientide hinnangud
 kontakt.html        Hinnapäringu vorm ja kontaktandmed
 aitah.html          Tänuleht, noindex
 privaatsus.html     Privaatsustingimused
 404.html            Vealeht, noindex
 stiil.css           Jagatud stiil
-skript.js           Menüü, vormi valideerimine, tööde filter
+skript.js           Ülekattemenüü, valgusti, vormi valideerimine
 api/kontakt.js      Vormi taust, Resend
 fondid/             IBM Plex Sans ja Mono, latin ja latin-ext
 pildid/             Töödeldud WebP-d ja logo
 jagamispilt.png     og:image, 1200x630
 ```
+
+### Portfooliokeskne ülesehitus
+
+Avaleht algab täisekraan avapildiga, millel on ainult logo ja üks rida
+teksti. Menüü on ülekattes, mis avaneb paremal ülal olevast nupust ja
+katab kogu ekraani suurte linkidega. Kohe avapildi järel algavad tööde
+pildid, ilma vahepealse tekstiplokita.
+
+Tekstiraskus on avalehelt maha võetud. Pikem sisu elab nüüd eraldi
+lehtedel: teenused, meist ja tagasiside.
 
 **Artiklite lehte ei ole.** Jätsin selle teadlikult välja, sest sisu
 selle jaoks praegu ei ole ja tühi artiklite nimekiri kahjustaks pigem kui

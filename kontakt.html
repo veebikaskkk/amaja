@@ -162,23 +162,68 @@
 <a class="hyppa-sisule" href="#sisu">Hüppa sisu juurde</a>
 
 <header class="pais">
-  <div class="raam pais-sisu">
+  <div class="pais-sisu">
     <a class="logo" href="/" aria-label="A-MAJA OÜ avaleht">
-      <img src="/pildid/a-maja-logo-hele.png" alt="A-MAJA OÜ logo" width="606" height="314">
+      <img src="/pildid/a-maja-logo-hele.svg" alt="A-MAJA OÜ logo" width="2424" height="1256">
     </a>
-    <button class="menuu-nupp" type="button" aria-expanded="false" aria-controls="peamenuu" aria-label="Ava menüü">
-      <span></span><span></span><span></span>
+    <button class="menuu-nupp" type="button" aria-expanded="false" aria-controls="peamenuu">
+      <span class="menuu-nupp-tekst">Menüü</span>
+      <span class="menuu-nupp-triibud" aria-hidden="true"><span></span><span></span></span>
     </button>
-    <nav id="peamenuu" class="menuu" aria-label="Peamenüü">
-      <ul>
-        <li><a href="/teenused.html">Teenused</a></li>
-        <li><a href="/tood.html">Tehtud tööd</a></li>
-        <li><a href="/tagasiside.html">Tagasiside</a></li>
-        <li><a href="/kontakt.html" class="nupp nupp-vaike" aria-current="page">Küsi pakkumist</a></li>
-      </ul>
-    </nav>
   </div>
 </header>
+
+<nav id="peamenuu" class="menuu" aria-label="Peamenüü" hidden>
+  <div class="menuu-sisu">
+    <div class="menuu-veerg">
+      <p class="silt">Menüü</p>
+      <ul>
+          <li><a href="/tood.html">Portfoolio</a></li>
+          <li><a href="/teenused.html">Teenused</a></li>
+          <li><a href="/meist.html">Meist</a></li>
+          <li><a href="/tagasiside.html">Tagasiside</a></li>
+          <li><a href="/kontakt.html" aria-current="page">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="menuu-kontakt">
+      <p class="silt">Kiire hinnapäring</p>
+
+      <form class="menuu-vorm" id="menuu-vorm" data-paring novalidate>
+        <p class="vormi-teade" id="menuu-vormi-teade" role="alert" aria-live="polite" hidden></p>
+
+        <div class="vali">
+          <label for="menuu-nimi">Nimi</label>
+          <input type="text" id="menuu-nimi" name="nimi" autocomplete="name" required>
+        </div>
+        <div class="vali">
+          <label for="menuu-epost">E-post</label>
+          <input type="email" id="menuu-epost" name="epost" autocomplete="email" required>
+        </div>
+        <div class="vali">
+          <label for="menuu-sonum">Mida plaanite?</label>
+          <textarea id="menuu-sonum" name="sonum" rows="3" required></textarea>
+        </div>
+
+        <div class="nousolek">
+          <input type="checkbox" id="menuu-nousolek" name="nousolek" required>
+          <label for="menuu-nousolek">Nõustun andmete töötlemisega. <a href="/privaatsus.html">Privaatsus</a></label>
+        </div>
+
+        <div class="meepott" aria-hidden="true">
+          <label for="menuu-veebiaadress">Jätke see väli tühjaks</label>
+          <input type="text" id="menuu-veebiaadress" name="veebiaadress" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button type="submit" class="nupp" data-saada>Saada päring</button>
+      </form>
+
+      <p class="menuu-kontakt-rida">
+        <a href="tel:+37253874959">+372 5387 4959</a>
+        <a href="mailto:info@a-maja.com">info@a-maja.com</a>
+      </p>
+    </div>
+  </div>
+</nav>
 
 <main id="sisu">
   <nav class="leivapuru" aria-label="Leivapuru">
@@ -203,7 +248,7 @@
         <p class="silt">01 / Hinnapäring</p>
         <h2>Saada päring</h2>
 
-        <form class="vorm" id="paringu-vorm" novalidate>
+        <form class="vorm" id="paringu-vorm" data-paring novalidate>
           <p class="vormi-teade" id="vormi-teade" role="alert" aria-live="polite" hidden></p>
 
           <div class="vali">
@@ -258,7 +303,7 @@
           </div>
 
           <div>
-            <button type="submit" class="nupp" id="saada-nupp">Saada päring</button>
+            <button type="submit" class="nupp" data-saada>Saada päring</button>
           </div>
         </form>
       </div>
@@ -295,12 +340,17 @@
     </div>
   </section>
 
+  <section class="vahepilt vahepilt-tyhi">
+    <img src="/pildid/eramu-kelpkatus-garaaz-maakivi.webp" width="1600" height="733" loading="lazy"
+         alt="Ühekorruseline kelpkatusega elamu valge krohvfassaadi, maakiviga sissepääsu ja kahe auto garaažiga.">
+  </section>
+
 </main>
 
 <footer class="jalus">
   <div class="raam jalus-ruudustik">
     <div class="jalus-plokk">
-      <img src="/pildid/a-maja-logo-hele.png" alt="A-MAJA OÜ logo" width="606" height="314" loading="lazy">
+      <img src="/pildid/a-maja-logo-hele.svg" alt="A-MAJA OÜ logo" width="2424" height="1256" loading="lazy">
       <p>Arhitektuurialane ettevõte. Projekteerime üksikelamuid, juurdeehitusi ja abihooneid, kuid ka suuremaid objekte.</p>
     </div>
     <div class="jalus-plokk">
